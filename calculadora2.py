@@ -70,4 +70,4 @@ if(medio_de_pago == 1):
 elif(medio_de_pago == 2):
     print("El medio de pago con el cual usted va a pagar es: Otro medio de pago, con un recargo del 0%")
 else:
-    print("Por favor eligir una opción valida\n")
+    print("por favor eligir una opción valida\n") 
