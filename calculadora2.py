@@ -1,25 +1,22 @@
+opcion=False
+
 print("Bienvenidos al restaurante hamburguers abcccc \nPor favor eliga una de las siguientes opciones para pedir una hamburguesa: ")
 print("1. Hamburguesa sencilla... $20.000 pesos")
 print("2. Hamburguesa doble... $25.000 pesos")
 print("3. Hamburguesa triple... $28.000 pesos" )
-opcion_hamburguesa = int(input())
 
-while(opcion_hamburguesa > 3):
-    print("Por favor eligir una opción valida\n")
-    print("Bienvenidos al restaurante hamburguers bcccc \nPor favor eliga una de las siguientes opciones para pedir una hamburguesa: ")
-    print("1. Hamburguesa sencilla... $20.000 pesos")
-    print("2. Hamburguesa doble... $25.000 pesos")
-    print("3. Hamburguesa triple... $28.000 pesos" )
-    opcion_hamburguesa = int(input())
+while opcion==False:
+    opcion_hamburguesa=input("CUAL DESEAS ORDENAR: ")
+    print("La opcion elegida fue: ", opcion_hamburguesa)
 
-if(opcion_hamburguesa == 1):
+    if(opcion_hamburguesa == "1"):
         print("La hamburguesa que usted pidió fue: Hamburguesa sencilla, con un valor de $20.000 pesos")
-elif(opcion_hamburguesa == 2):
-    print("La hamburguesa que usted pidió fue: Hamburguesa doble, con un valor de $25.000 pesos")
-elif(opcion_hamburguesa == 3):
-    print("La hamburguesa que usted pidió fue: Hamburguesa triple, con un valor de $28.000 pesos")
-else:
-    print("Por favor eligir una opción valida\n")
+    elif(opcion_hamburguesa == "2"):
+        print("La hamburguesa que usted pidió fue: Hamburguesa doble, con un valor de $25.000 pesos")
+    elif(opcion_hamburguesa == "3"):
+        print("La hamburguesa que usted pidió fue: Hamburguesa triple, con un valor de $28.000 pesos")
+    else:
+        print("Por favor eligir una opción valida\n")
 
     
 print("\nPor favor eliga el medio de pago con el cual usted va a cancelar su pedido por medio de las siguientes opciones: ")
