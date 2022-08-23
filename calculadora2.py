@@ -1,4 +1,4 @@
-print("Bienvenidos al restaurante hamburguers bcccc \nPor favor eliga una de las siguientes opciones para pedir una hamburguesa: ")
+print("Bienvenidos al restaurante hamburguers abcccc \nPor favor eliga una de las siguientes opciones para pedir una hamburguesa: ")
 print("1. Hamburguesa sencilla... $20.000 pesos")
 print("2. Hamburguesa doble... $25.000 pesos")
 print("3. Hamburguesa triple... $28.000 pesos" )
