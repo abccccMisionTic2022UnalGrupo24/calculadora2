@@ -1,7 +1,7 @@
 sencilla = 20000
 doble = 25000
 triple = 28000
-total = 0
+total=0
 l_prod = []
 l_total = []
 l_cantidad = []
@@ -18,6 +18,7 @@ d=0
 e=True
 beb=[]
 canbeb=[]
+
 
 
 def ivad(bebidadulce,cantidad):
@@ -44,25 +45,6 @@ def siniva(agua,cantidad):
     totalsinivac= (agu*1.19)
     return totalsinivac
 
-"""while e==True:
-    Entradadetexto=input("Ingrese el tipo de bebidas que desea: \n 1 Gaseosa o Jugo \n 2. Agua  \n 3. Cerveza \n C. Continuar \n Ingrese el tipo segun se espeficica y la cantidad: ")
-    Entradadetexto=Entradadetexto.lower()
-
-
-
-    if (Entradadetexto == "1" or Entradadetexto=="gaseosa"):
-        cantidad=int(input("Ingrese la contidad de bebidas que desea: "))
-        r= ivad(bebidadulce,cantidad)
-    elif (Entradadetexto == "3" or Entradadetexto=="cerveza"):
-        cantidad=int(input("Ingrese la contidad de bebidas que desea: "))
-        c= ivac(cerveza,cantidad)
-    elif (Entradadetexto == "2" or Entradadetexto=="agua"):
-        cantidad=int(input("Ingrese la contidad de bebidas que desea: "))
-        f=siniva(agua,cantidad)
-    else:
-        print(" Bebidas confirmadas!!!!")      
-        e=False
-"""
 def Eliminar():
     for i in range(len(l_prod)):
         print(i+1,l_cantidad[i], l_prod[i], l_total[i])
@@ -73,7 +55,7 @@ def Eliminar():
     del l_total[l]
     for i in range(len(l_prod)):
         print(i+1,l_cantidad[i], l_prod[i], l_total[i])
-    #    caso = True        
+        caso = True        
         
     
 def add(texto,c):
@@ -87,16 +69,19 @@ def add(texto,c):
     op = input("Desea ordenar algo mas? oprima S o N: ").upper()
     if (op == "S"):
         caso = False
-        Menu(caso)
     else:
         caso = True
         print("Lo que usd ordeno fue:\n ------------------------------")
         for i in range(len(l_prod)):
             print(i+1,l_cantidad[i], l_prod[i], l_total[i])
-        print("------------------------------ \n El valor total es: ", sum(l_total)) 
+        total=int(sum(l_total))
+        print("------------------------------ \n El valor total es: ", total ) 
         check= input(" ------------------------------ \n desea eliminar algun item S/N: ").upper()
         if (check == "S"):
             Eliminar()
+        else:    
+            caso = True
+        
             
           
                 
@@ -109,7 +94,6 @@ def Menu(caso):
     print("6. Agua                  ... $ 4.000 pesos" )
     print("7. Eliminar Item de la orden")
     print("8. Salir para continuar con el medio de pago")
-    opcion=caso
     while caso==False:
         opcion_hamburguesa=input("CUAL DESEAS ORDENAR: ").upper()
         print("La opcion elegida fue: ", opcion_hamburguesa)
@@ -152,26 +136,28 @@ def Menu(caso):
         else:
             print("Por favor eligir una opción valida\n")
 
-def mediopago():  
+def mediopago(total):  
+
+    print("Por favor eligir una opción valida\n")
     print("\nPor favor eliga el medio de pago con el cual usted va a cancelar su pedido por medio de las siguientes opciones: ")
-    print("1. Tarjeta de crédito (Se realiza un recargo del 7½)")
+    print("1. Tarjeta de crédito (Se realiza un recargo del 7%)")
     print("2. Otros medios de pago (no se realiza ningún tipo de recargo 0%)")
-    medio_de_pago=int(input())
+    medio_de_pago=input()
 
-    while(medio_de_pago > 2):
-        print("Por favor eligir una opción valida\n")
-        print("\nPor favor eliga el medio de pago con el cual usted va a cancelar su pedido por medio de las siguientes opciones: ")
-        print("1. Tarjeta de crédito (Se realiza un recargo del 7½)")
-        print("2. Otros medios de pago (no se realiza ningún tipo de recargo 0%)")
-        medio_de_pago=int(input())
+    if(medio_de_pago == "1"):
+        print("El medio de pago con el cual usted va a pagar es: Tarjeta de crédito, con un recargo del 7%")
+        total=sum(l_total)
+        Valor_Recargo=total*7/100
+        print(Valor_Recargo)
+        print (total)
 
-        if(medio_de_pago == 1):
-            print("El medio de pago con el cual usted va a pagar es: Tarjeta de crédito, con un recargo del 7%")
-        elif(medio_de_pago == 2):
-            print("El medio de pago con el cual usted va a pagar es: Otro medio de pago, con un recargo del 0%")
-        else:
-            print("por favor eligir una opción valida\n") 
+    elif(medio_de_pago == "2"):
+        print("El medio de pago con el cual usted va a pagar es: Otro medio de pago, con un recargo del 0%")
+    else:
+        print("por favor eligir una opción valida\n") 
+        mediopago()
+
 
 print("Bienvenidos al restaurante hamburguers abcccc \nPor favor eliga una de las siguientes opciones para pedir una hamburguesa: ")
 Menu(caso)
-mediopago()
+mediopago(total)
