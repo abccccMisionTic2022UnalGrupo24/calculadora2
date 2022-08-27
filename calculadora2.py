@@ -68,13 +68,6 @@ def Eliminar():
         print(i+1,l_cantidad[i], l_prod[i], l_total[i])
     l=int(input("Indique el producto que desea eliminar:"))
     l=l-1
-    #if (delete == "hamburguesa sensilla" or delete == "sensilla" or delete == "1"):
-     #   remo="Hamburguesa Sencilla"
-      #  for i in range((len(l_prod))):
-       #     remo2=l_prod[(i-1)]
-         #   print(remo)
-          #  if (remo == remo2):
-
     del l_prod[l]
     del l_cantidad[l]
     del l_total[l]
@@ -101,10 +94,10 @@ def add(texto,c):
         for i in range(len(l_prod)):
             print(i+1,l_cantidad[i], l_prod[i], l_total[i])
         print("------------------------------ \n El valor total es: ", sum(l_total)) 
-        check= (input(print(" ------------------------------ \n desea eliminar algun item S/N:  "))).upper()
+        check= input(" ------------------------------ \n desea eliminar algun item S/N: ").upper()
         if (check == "S"):
             Eliminar()
-            caso=True
+            
           
                 
 def Menu(caso):
@@ -117,7 +110,7 @@ def Menu(caso):
     print("7. Eliminar Item de la orden")
     print("8. Salir para continuar con el medio de pago")
     opcion=caso
-    while opcion==False:
+    while caso==False:
         opcion_hamburguesa=input("CUAL DESEAS ORDENAR: ").upper()
         print("La opcion elegida fue: ", opcion_hamburguesa)
 
@@ -153,12 +146,9 @@ def Menu(caso):
             add(texto,c)
         elif(opcion_hamburguesa == "7"):
             Eliminar()
-            caso-True
+            caso=True
         elif(opcion_hamburguesa == "SALIR"):
-            opcion = True
-            for i in range(len(l_prod)):
-                print(l_cantidad[i], l_prod[i], l_total[i])
-            print("El valor total es: ", sum(l_total))    
+            caso = True    
         else:
             print("Por favor eligir una opción valida\n")
 
